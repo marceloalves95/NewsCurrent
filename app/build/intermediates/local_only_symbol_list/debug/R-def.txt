@@ -1,0 +1,33 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color gray
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id actvAuthor
+id actvAuthorTitle
+id actvContent
+id actvDescription
+id actvNewsContent
+id actvNewsDescription
+id actvNewsTitle
+id actvTitle
+id rvNewsActual
+layout news_current_item
+layout news_current_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string author
+string content
+string description
+string title
+style Theme.NewsCurrent
+xml backup_rules
+xml data_extraction_rules

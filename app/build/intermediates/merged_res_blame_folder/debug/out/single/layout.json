@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "br.com.newscurrent.app-mergeDebugResources-37:/layout/news_current_main.xml",
+        "source": "br.com.newscurrent.app-main-40:/layout/news_current_main.xml"
+    },
+    {
+        "merged": "br.com.newscurrent.app-mergeDebugResources-37:/layout/news_current_item.xml",
+        "source": "br.com.newscurrent.app-main-40:/layout/news_current_item.xml"
+    }
+]

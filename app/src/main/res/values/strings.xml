@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NewsCurrent</string>
+    <string name="author">Autor</string>
+    <string name="title">Titulo</string>
+    <string name="description">Descrição</string>
+    <string name="content">Conteúdo</string>
+</resources>

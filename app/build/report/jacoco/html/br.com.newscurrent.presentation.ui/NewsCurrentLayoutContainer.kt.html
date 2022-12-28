@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>NewsCurrentLayoutContainer.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">br.com.newscurrent.presentation.ui</a> &gt; <span class="el_source">NewsCurrentLayoutContainer.kt</span></div><h1>NewsCurrentLayoutContainer.kt</h1><pre class="source lang-java linenums">package br.com.newscurrent.presentation.ui
+
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import br.com.newscurrent.databinding.NewsCurrentMainBinding
+import br.com.newscurrent.domain.models.News
+import br.com.newscurrent.presentation.adapter.NewsCurrentAdapter
+import br.com.newscurrent.presentation.model.NewsCurrentState
+
+<span class="nc" id="L10">class NewsCurrentLayoutContainer(</span>
+<span class="nc" id="L11">    private val binding: NewsCurrentMainBinding</span>
+) {
+<span class="nc" id="L13">    private var newsAdapter = NewsCurrentAdapter(emptyList())</span>
+
+    fun setState(state: NewsCurrentState) {
+<span class="nc" id="L16">        when (state) {</span>
+<span class="nc bnc" id="L17" title="All 2 branches missed.">            is NewsCurrentState.ScreenData -&gt; handleScreenData(state.screenData)</span>
+<span class="nc bnc" id="L18" title="All 2 branches missed.">            is NewsCurrentState.Error -&gt; handleErrorData(state.exception)</span>
+        }
+<span class="nc" id="L20">    }</span>
+
+<span class="nc" id="L22">    private fun handleScreenData(news: News) = with(binding) {</span>
+<span class="nc" id="L23">        rvNewsActual.apply {</span>
+<span class="nc" id="L24">            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)</span>
+<span class="nc" id="L25">            newsAdapter = NewsCurrentAdapter(news.articles)</span>
+<span class="nc" id="L26">            adapter = newsAdapter</span>
+<span class="nc" id="L27">        }</span>
+<span class="nc" id="L28">    }</span>
+
+    private fun handleErrorData(error: Throwable?) {
+<span class="nc" id="L31">        Toast.makeText(binding.root.context, &quot;Erro $error&quot;, Toast.LENGTH_SHORT).show()</span>
+<span class="nc" id="L32">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
