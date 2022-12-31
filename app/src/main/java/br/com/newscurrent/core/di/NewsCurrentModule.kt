@@ -5,7 +5,6 @@ import br.com.newscurrent.data.NewsCurrentRemoteImpl
 import br.com.newscurrent.data.api.NewsApi
 import br.com.newscurrent.domain.interactor.GetNewsCurrentInteractor
 import br.com.newscurrent.domain.remote.NewsCurrentRemote
-import br.com.newscurrent.network.service.NetworkingApi
 import br.com.newscurrent.network.service.Service
 import br.com.newscurrent.presentation.ui.NewsCurrentViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -32,13 +31,8 @@ object NewsCurrentModule {
                     baseUrl = BASE_URL
                 )
             }
-            factory<NetworkingApi> {
-                Service.createService(
-                    baseUrl = BASE_URL
-                )
-            }
             single<NewsCurrentRemote> {
-                NewsCurrentRemoteImpl(get(),get())
+                NewsCurrentRemoteImpl(get())
             }
         }
     }

@@ -1,30 +1,32 @@
 package br.com.newscurrent.extensions.network
 
-import br.com.newscurrent.network.service.ServiceApi
+import br.com.newscurrent.network.model.ServiceState
+import okhttp3.ResponseBody
 import retrofit2.Response
-import java.net.HttpURLConnection
 
-fun <T : Any> Response<T>.parseResponse(): ServiceApi<T> {
-    if (isSuccessful) {
-        val body = body()
-
-        if (body != null) {
-            return ServiceApi.Success(
-                data = body,
-                httpCode = code()
-            )
-        }
-    } else {
-        return ServiceApi.Error(
-            exception = Exception(),
-            response = body(),
-            httpCode = code()
+fun <T : Any> Response<T>.parseResponse(
+    body: T? = this.body(),
+    httpCode: Int = this.code(),
+    errorBody: ResponseBody? = this.errorBody(),
+    message: String = this.message()
+): ServiceState<T> {
+    return if (isSuccessful && body != null) {
+        ServiceState.Success(
+            data = body,
+            httpCode = httpCode
         )
-
+    } else {
+        ServiceState.Error(
+            response = body(),
+            message = message,
+            httpCode = httpCode,
+            errorBody = errorBody,
+            exception = Throwable()
+        )
     }
-    return ServiceApi.Error(
-        exception = Exception(),
-        response = body(),
-        httpCode = HttpURLConnection.HTTP_INTERNAL_ERROR
-    )
+}
+
+fun <T : Any> ServiceState<T>.toResponse(): T = when (this) {
+    is ServiceState.Success -> data
+    is ServiceState.Error -> throw exception
 }

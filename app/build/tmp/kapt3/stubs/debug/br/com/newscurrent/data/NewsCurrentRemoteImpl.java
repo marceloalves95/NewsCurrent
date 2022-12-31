@@ -6,14 +6,14 @@ import java.lang.System;
 public final class NewsCurrentRemoteImpl implements br.com.newscurrent.domain.remote.NewsCurrentRemote {
     private final br.com.newscurrent.data.api.NewsApi service = null;
     
-    public NewsCurrentRemoteImpl(@org.jetbrains.annotations.NotNull
+    public NewsCurrentRemoteImpl(@org.jetbrains.annotations.NotNull()
     br.com.newscurrent.data.api.NewsApi service) {
         super();
     }
     
-    @org.jetbrains.annotations.Nullable
-    @java.lang.Override
-    public java.lang.Object getNews(@org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.Nullable()
+    @java.lang.Override()
+    public java.lang.Object getNews(@org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super br.com.newscurrent.domain.models.News> continuation) {
         return null;
     }
