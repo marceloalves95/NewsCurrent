@@ -18,15 +18,17 @@ import br.com.newscurrent.presentation.model.NewsCurrentState
 <span class="nc" id="L18">    fun loadNewsCurrent() = launch {</span>
 <span class="nc" id="L19">        getNewsCurrentInteractor.invoke().collect { event -&gt;</span>
 <span class="nc" id="L20">            when (event) {</span>
-<span class="nc bnc" id="L21" title="All 2 branches missed.">                is Event.Data -&gt; {</span>
-<span class="nc" id="L22">                    _state.value = NewsCurrentState.ScreenData(event.data)</span>
+<span class="nc bnc" id="L21" title="All 2 branches missed.">                is Event.Loading -&gt; {</span>
+<span class="nc" id="L22">                    _state.value = NewsCurrentState.Loading</span>
                 }
-<span class="nc bnc" id="L24" title="All 2 branches missed.">                is Event.Error -&gt; {</span>
-<span class="nc" id="L25">                    _state.value = NewsCurrentState.Error(event.error)</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">                is Event.Data -&gt; {</span>
+<span class="nc" id="L25">                    _state.value = NewsCurrentState.ScreenData(event.data)</span>
                 }
-                else -&gt; Unit
+<span class="nc bnc" id="L27" title="All 2 branches missed.">                is Event.Error -&gt; {</span>
+<span class="nc" id="L28">                    _state.value = NewsCurrentState.Error(event.error)</span>
+                }
             }
-<span class="nc" id="L29">        }</span>
-<span class="nc" id="L30">    }</span>
+<span class="nc" id="L31">        }</span>
+<span class="nc" id="L32">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -2,16 +2,15 @@
 
 import br.com.newscurrent.data.API_KEY
 import br.com.newscurrent.data.models.NewsResponse
-import br.com.newscurrent.network.service.ServiceApi
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface NewsApi {
     @GET(&quot;top-headlines?country=br&quot;)
-<span class="fc" id="L12">    suspend fun getNews(</span>
-<span class="fc" id="L13">        @Query(&quot;category&quot;) category: String = &quot;technology&quot;,</span>
-<span class="fc" id="L14">        @Query(&quot;apiKey&quot;) apiKey: String = API_KEY</span>
-    ): ServiceApi&lt;NewsResponse&gt;
+<span class="nc" id="L11">    suspend fun getNews(</span>
+<span class="nc" id="L12">        @Query(&quot;category&quot;) category: String = &quot;technology&quot;,</span>
+<span class="nc" id="L13">        @Query(&quot;apiKey&quot;) apiKey: String = API_KEY</span>
+    ): Response&lt;NewsResponse&gt;
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

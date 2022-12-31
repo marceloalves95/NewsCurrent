@@ -3,7 +3,8 @@
 import br.com.newscurrent.domain.models.News
 
 sealed class NewsCurrentState {
-<span class="nc" id="L6">    data class Error(val exception: Throwable? = null) : NewsCurrentState()</span>
+<span class="nc" id="L6">    object Loading: NewsCurrentState()</span>
 <span class="nc" id="L7">    data class ScreenData(val screenData: News) : NewsCurrentState()</span>
+<span class="nc" id="L8">    data class Error(val exception: Throwable? = null) : NewsCurrentState()</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
