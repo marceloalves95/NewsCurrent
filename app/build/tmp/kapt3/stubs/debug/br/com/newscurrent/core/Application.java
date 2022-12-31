@@ -9,7 +9,7 @@ public class Application extends android.app.Application {
         super();
     }
     
-    @java.lang.Override
+    @java.lang.Override()
     public void onCreate() {
     }
 }

@@ -24,8 +24,8 @@ public final class NewsCurrentActivity extends androidx.appcompat.app.AppCompatA
         return null;
     }
     
-    @java.lang.Override
-    protected void onCreate(@org.jetbrains.annotations.Nullable
+    @java.lang.Override()
+    protected void onCreate(@org.jetbrains.annotations.Nullable()
     android.os.Bundle savedInstanceState) {
     }
     

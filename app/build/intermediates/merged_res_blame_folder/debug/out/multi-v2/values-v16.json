@@ -4,7 +4,17 @@
             "outputFile": "br.com.newscurrent.app-mergeDebugResources-36:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/marceloalves/.gradle/caches/transforms-3/cbb96415fade5e27e0e05e638edd3416/transformed/appcompat-1.5.1/res/values-v16/values-v16.xml",
+                    "source": "/Users/marceloalves/.gradle/caches/transforms-3/9d1a8879516641e7ef79640f3bf13cb2/transformed/core-1.9.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/Users/marceloalves/.gradle/caches/transforms-3/36bcb4d8fb17f70dd5395780987c8437/transformed/appcompat-1.5.1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,16 +30,6 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
-                    }
-                },
-                {
-                    "source": "/Users/marceloalves/.gradle/caches/transforms-3/94dfdd976655ecc1c9b79cc0f62f1e90/transformed/core-1.9.0/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
                     }
                 }
             ]

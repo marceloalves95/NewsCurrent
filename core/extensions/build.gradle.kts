@@ -55,4 +55,8 @@ dependencies {
     implementation(Dependencies.Network.retrofit)
     implementation(Dependencies.Network.converter_gson)
     implementation(Dependencies.Network.okhttp3_logging_interceptor)
+
+    //ThirdParty
+    implementation(Dependencies.ThirdParty.glide)
+    implementation(Dependencies.ThirdParty.facebook_shimmer)
 }

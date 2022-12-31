@@ -1,6 +1,7 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color colorGray
 color gray
 color purple_200
 color purple_500
@@ -18,9 +19,20 @@ id actvNewsContent
 id actvNewsDescription
 id actvNewsTitle
 id actvTitle
+id cvShimmerCard
+id frameLayout
+id ivShimmerImage
+id ncevError
 id rvNewsActual
+id shimmerFrameLayout
+id tvShimmerAuthor
+id tvShimmerGenre
+id tvShimmerPublished
+id tvShimmerPublisher
+id tvShimmerTitle
 layout news_current_item
 layout news_current_main
+layout news_current_shimmer_placeholder
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

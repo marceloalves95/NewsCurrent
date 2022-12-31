@@ -6,13 +6,13 @@ import java.lang.System;
 public final class GetNewsCurrentInteractor {
     private final br.com.newscurrent.domain.remote.NewsCurrentRemote remote = null;
     
-    public GetNewsCurrentInteractor(@org.jetbrains.annotations.NotNull
+    public GetNewsCurrentInteractor(@org.jetbrains.annotations.NotNull()
     br.com.newscurrent.domain.remote.NewsCurrentRemote remote) {
         super();
     }
     
-    @org.jetbrains.annotations.Nullable
-    public final java.lang.Object invoke(@org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.Nullable()
+    public final java.lang.Object invoke(@org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super kotlinx.coroutines.flow.Flow<? extends br.com.newscurrent.network.event.Event<br.com.newscurrent.domain.models.News>>> continuation) {
         return null;
     }

@@ -1295,6 +1295,7 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color colorGray
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1832,6 +1833,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color orange_700
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1843,6 +1845,8 @@ color primary_text_disabled_material_light
 color purple_200
 color purple_500
 color purple_700
+color red_500
+color red_900
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -2224,6 +2228,11 @@ dimen m3_sys_state_hover_state_layer_opacity
 dimen m3_sys_state_pressed_state_layer_opacity
 dimen m3_timepicker_display_stroke_width
 dimen m3_timepicker_window_elevation
+dimen margin_large
+dimen margin_normal
+dimen margin_small
+dimen margin_xsmall
+dimen margin_xxsmall
 dimen material_bottom_sheet_max_width
 dimen material_clock_display_padding
 dimen material_clock_face_margin_top
@@ -2574,6 +2583,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_clock_black_24dp
+drawable ic_error_response
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -2703,6 +2713,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id acivIcon
 id actionDown
 id actionDownUp
 id actionUp
@@ -2761,6 +2772,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btTryAgain
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2800,6 +2812,7 @@ id currentState
 id custom
 id customPanel
 id cut
+id cvShimmerCard
 id cw_0
 id cw_180
 id cw_270
@@ -2862,6 +2875,7 @@ id flip
 id floating
 id forever
 id fragment_container_view_tag
+id frameLayout
 id frost
 id fullscreen_header
 id ghost_view
@@ -2894,6 +2908,7 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id ivShimmerImage
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -2970,6 +2985,7 @@ id navigation_bar_item_labels_group
 id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_header_container
+id ncevError
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -3043,6 +3059,7 @@ id selected
 id selection_type
 id sharedValueSet
 id sharedValueUnset
+id shimmerFrameLayout
 id shortcut
 id showCustom
 id showHome
@@ -3125,6 +3142,11 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvShimmerAuthor
+id tvShimmerGenre
+id tvShimmerPublished
+id tvShimmerPublisher
+id tvShimmerTitle
 id unchecked
 id uniform
 id unlabeled
@@ -3334,8 +3356,10 @@ layout mtrl_picker_header_title_text
 layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
+layout news_current_error_view
 layout news_current_item
 layout news_current_main
+layout news_current_shimmer_placeholder
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -3495,6 +3519,7 @@ string path_password_strike_through
 string search_menu_title
 string status_bar_notification_info_overflow
 string title
+string try_again
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -3787,6 +3812,7 @@ style MaterialAlertDialog_MaterialComponents_Title_Panel
 style MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked
 style MaterialAlertDialog_MaterialComponents_Title_Text
 style MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked
+style MyButton
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents

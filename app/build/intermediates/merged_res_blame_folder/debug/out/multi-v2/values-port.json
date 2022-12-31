@@ -4,7 +4,7 @@
             "outputFile": "br.com.newscurrent.app-mergeDebugResources-36:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "/Users/marceloalves/.gradle/caches/transforms-3/cbb96415fade5e27e0e05e638edd3416/transformed/appcompat-1.5.1/res/values-port/values-port.xml",
+                    "source": "/Users/marceloalves/.gradle/caches/transforms-3/36bcb4d8fb17f70dd5395780987c8437/transformed/appcompat-1.5.1/res/values-port/values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

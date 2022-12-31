@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:ns1="http://schemas.android.com/tools">
     <color name="black">#FF000000</color>
+    <color name="colorGray">#DDDDDD</color>
     <color name="gray">#CCCCCC</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
@@ -9,7 +10,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">NewsCurrent</string>
-    <string name="author">Autor</string>
+    <string name="author" ns1:ignore="Typos">Autor</string>
     <string name="content">Conteúdo</string>
     <string name="description">Descrição</string>
     <string name="title">Titulo</string>

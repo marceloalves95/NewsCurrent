@@ -10,6 +10,7 @@ import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.impl.annotations.MockK
 import io.mockk.impl.annotations.RelaxedMockK
+import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
@@ -44,6 +45,32 @@ class GetNewsCurrentInteractorTest : BaseTest() {
             mutableListOf(
                 Event.Loading,
                 Event.Data(dummyNews)
+            )
+        )
+
+        coVerify {
+            remote.getNews()
+        }
+    }
+
+    @Test(expected = Throwable::class)
+    fun `should get interactor when it is called with failure`() = runBlocking {
+
+        val progressEmit: MutableList<Event<News>> = mutableListOf()
+        val error = mockk<Throwable>(relaxed = true)
+
+        coEvery {
+            remote.getNews()
+        } throws error
+
+        getNewsCurrentInteractor.invoke().collect { event ->
+            progressEmit.add(event)
+        }
+
+        assertThat(progressEmit).isEqualTo(
+            mutableListOf(
+                Event.Loading,
+                Event.Error(error)
             )
         )
 

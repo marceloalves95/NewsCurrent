@@ -11,7 +11,7 @@ class NewsCurrentActivity : AppCompatActivity() {
 
     private val binding by viewBinding(NewsCurrentMainBinding::inflate)
     private val layoutContainer by lazy {
-        NewsCurrentLayoutContainer(binding)
+        NewsCurrentLayoutContainer(binding, viewModel)
     }
     private val viewModel: NewsCurrentViewModel by viewModel()
 

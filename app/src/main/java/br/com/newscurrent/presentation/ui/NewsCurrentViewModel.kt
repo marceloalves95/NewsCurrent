@@ -18,13 +18,15 @@ class NewsCurrentViewModel(
     fun loadNewsCurrent() = launch {
         getNewsCurrentInteractor.invoke().collect { event ->
             when (event) {
+                is Event.Loading -> {
+                    _state.value = NewsCurrentState.Loading
+                }
                 is Event.Data -> {
                     _state.value = NewsCurrentState.ScreenData(event.data)
                 }
                 is Event.Error -> {
                     _state.value = NewsCurrentState.Error(event.error)
                 }
-                else -> Unit
             }
         }
     }

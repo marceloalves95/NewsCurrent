@@ -6,24 +6,24 @@ import java.lang.System;
 public final class NewsCurrentAdapter extends androidx.recyclerview.widget.RecyclerView.Adapter<br.com.newscurrent.presentation.adapter.NewsCurrentAdapter.NewsCurrentViewHolder> {
     private final java.util.List<br.com.newscurrent.domain.models.Article> listArticles = null;
     
-    public NewsCurrentAdapter(@org.jetbrains.annotations.NotNull
+    public NewsCurrentAdapter(@org.jetbrains.annotations.NotNull()
     java.util.List<br.com.newscurrent.domain.models.Article> listArticles) {
         super();
     }
     
-    @org.jetbrains.annotations.NotNull
-    @java.lang.Override
-    public br.com.newscurrent.presentation.adapter.NewsCurrentAdapter.NewsCurrentViewHolder onCreateViewHolder(@org.jetbrains.annotations.NotNull
+    @org.jetbrains.annotations.NotNull()
+    @java.lang.Override()
+    public br.com.newscurrent.presentation.adapter.NewsCurrentAdapter.NewsCurrentViewHolder onCreateViewHolder(@org.jetbrains.annotations.NotNull()
     android.view.ViewGroup parent, int viewType) {
         return null;
     }
     
-    @java.lang.Override
-    public void onBindViewHolder(@org.jetbrains.annotations.NotNull
+    @java.lang.Override()
+    public void onBindViewHolder(@org.jetbrains.annotations.NotNull()
     br.com.newscurrent.presentation.adapter.NewsCurrentAdapter.NewsCurrentViewHolder holder, int position) {
     }
     
-    @java.lang.Override
+    @java.lang.Override()
     public int getItemCount() {
         return 0;
     }
@@ -32,12 +32,12 @@ public final class NewsCurrentAdapter extends androidx.recyclerview.widget.Recyc
     public final class NewsCurrentViewHolder extends androidx.recyclerview.widget.RecyclerView.ViewHolder {
         private final br.com.newscurrent.databinding.NewsCurrentItemBinding binding = null;
         
-        public NewsCurrentViewHolder(@org.jetbrains.annotations.NotNull
+        public NewsCurrentViewHolder(@org.jetbrains.annotations.NotNull()
         br.com.newscurrent.databinding.NewsCurrentItemBinding binding) {
             super(null);
         }
         
-        public final void bind(@org.jetbrains.annotations.NotNull
+        public final void bind(@org.jetbrains.annotations.NotNull()
         br.com.newscurrent.domain.models.Article article) {
         }
     }
