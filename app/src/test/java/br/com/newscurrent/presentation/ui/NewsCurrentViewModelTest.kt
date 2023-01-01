@@ -3,16 +3,16 @@ package br.com.newscurrent.presentation.ui
 import androidx.lifecycle.Observer
 import br.com.newscurrent.domain.interactor.GetNewsCurrentInteractor
 import br.com.newscurrent.domain.interactor.dummyNews
-import br.com.newscurrent.domain.interactor.dummyNewsResponse
 import br.com.newscurrent.network.event.Event
 import br.com.newscurrent.presentation.model.NewsCurrentState
 import br.com.newscurrent.testing.base.BaseTest
-import io.mockk.Runs
 import io.mockk.coEvery
 import io.mockk.coVerify
+import io.mockk.confirmVerified
 import io.mockk.impl.annotations.RelaxedMockK
 import io.mockk.mockk
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -45,23 +45,56 @@ class NewsCurrentViewModelTest:BaseTest(){
     }
 
     @Test
-    fun `should when`(){
+    fun `should load news current when it is called with success`() = runBlocking{
 
-        val state = mockk<NewsCurrentState.ScreenData>(relaxed = true)
+        //Arrange
+        val state = NewsCurrentState.ScreenData(dummyNews)
+
         coEvery { interactor.invoke() } returns flowOf(
             Event.loading(isLoading = true),
             Event.data(dummyNews)
         )
 
         coEvery {
-            NewsCurrentState.ScreenData(dummyNews)
-        }  returns state
+            stateObserver.onChanged(state)
+        } returns Unit
 
+        //Act
         viewModel.loadNewsCurrent()
 
+        //Assert
         coVerify(exactly = 1) {
             interactor.invoke()
         }
+
+        confirmVerified(interactor)
     }
 
+    @Test
+    fun `should load news current when it is called with failure`() = runBlocking{
+
+        //Arrange
+        val error = mockk<Throwable>(relaxed = true)
+        val state = NewsCurrentState.Error(exception = error)
+
+        coEvery { interactor.invoke() } returns flowOf(
+            Event.loading(isLoading = true),
+            Event.error(error)
+        )
+
+        coEvery {
+            stateObserver.onChanged(state)
+        } returns Unit
+
+        //Act
+        viewModel.loadNewsCurrent()
+
+        //Assert
+        coVerify(exactly = 1) {
+            interactor.invoke()
+        }
+
+        confirmVerified(interactor)
+
+    }
 }

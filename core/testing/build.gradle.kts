@@ -38,19 +38,20 @@ dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.5.1")
     implementation("com.google.android.material:material:1.7.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.4")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
 
     //Tests
     implementation(Dependencies.Testing.mockk)
     implementation(Dependencies.Testing.objenesis)
+    implementation(Dependencies.Testing.arch_core_testing)
+    implementation(Dependencies.Testing.kotlinx_coroutines_test)
 
+    testImplementation(Dependencies.Testing.arch_core_testing)
     testImplementation(Dependencies.Testing.assertK)
     testImplementation(Dependencies.Testing.robolectric)
     testImplementation(Dependencies.Testing.mockk)
     testImplementation(Dependencies.Testing.junit)
     testImplementation(Dependencies.Testing.koin_test)
+    androidTestImplementation(Dependencies.Testing.arch_core_testing)
     androidTestImplementation(Dependencies.Testing.mockk_android)
     androidTestImplementation(Dependencies.Testing.ext_junit)
     androidTestImplementation(Dependencies.Testing.espresso_core)

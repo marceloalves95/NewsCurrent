@@ -8,6 +8,7 @@ import br.com.newscurrent.network.event.Event
 import br.com.newscurrent.testing.base.BaseTest
 import io.mockk.coEvery
 import io.mockk.coVerify
+import io.mockk.confirmVerified
 import io.mockk.impl.annotations.MockK
 import io.mockk.impl.annotations.RelaxedMockK
 import io.mockk.mockk
@@ -29,18 +30,21 @@ class GetNewsCurrentInteractorTest : BaseTest() {
     }
 
     @Test
-    fun `should get interactor when it is called with sucess`() = runBlocking {
+    fun `should get interactor when it is called with success`() = runBlocking {
 
+        //Arrange
         val progressEmit: MutableList<Event<News>> = mutableListOf()
 
         coEvery {
             remote.getNews()
         } returns dummyNews
 
+        //Act
         getNewsCurrentInteractor.invoke().collect { event ->
             progressEmit.add(event)
         }
 
+        //Assert
         assertThat(progressEmit).isEqualTo(
             mutableListOf(
                 Event.Loading,
@@ -51,11 +55,14 @@ class GetNewsCurrentInteractorTest : BaseTest() {
         coVerify {
             remote.getNews()
         }
+
+        confirmVerified(remote)
     }
 
     @Test(expected = Throwable::class)
     fun `should get interactor when it is called with failure`() = runBlocking {
 
+        //Arrange
         val progressEmit: MutableList<Event<News>> = mutableListOf()
         val error = mockk<Throwable>(relaxed = true)
 
@@ -63,10 +70,12 @@ class GetNewsCurrentInteractorTest : BaseTest() {
             remote.getNews()
         } throws error
 
+        //Act
         getNewsCurrentInteractor.invoke().collect { event ->
             progressEmit.add(event)
         }
 
+        //Assert
         assertThat(progressEmit).isEqualTo(
             mutableListOf(
                 Event.Loading,
@@ -77,5 +86,7 @@ class GetNewsCurrentInteractorTest : BaseTest() {
         coVerify {
             remote.getNews()
         }
+
+        confirmVerified(remote)
     }
 }

@@ -57,6 +57,8 @@ object Dependencies {
     }
 
     object Testing {
+        const val kotlinx_coroutines_test="org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.kotlinx_coroutines_test}"
+        const val arch_core_testing = "androidx.arch.core:core-testing:${Version.arch_core_testing_version}"
         const val assertK = "com.willowtreeapps.assertk:assertk-jvm:${Version.assertK_version}"
         const val mockk = "io.mockk:mockk:${Version.mockk_version}"
         const val mockk_android = "io.mockk:mockk-android:${Version.mockk_version}"

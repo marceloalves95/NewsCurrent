@@ -5,20 +5,21 @@ import assertk.assertions.isEqualTo
 import assertk.assertions.isInstanceOf
 import br.com.newscurrent.data.api.NewsApi
 import br.com.newscurrent.data.mapper.toNews
-import br.com.newscurrent.domain.interactor.dummyNews
+import br.com.newscurrent.data.models.NewsResponse
 import br.com.newscurrent.domain.interactor.dummyNewsResponse
 import br.com.newscurrent.domain.models.News
-import br.com.newscurrent.extensions.network.parseResponse
-import br.com.newscurrent.extensions.network.toResponse
 import br.com.newscurrent.testing.base.BaseTest
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.confirmVerified
 import io.mockk.impl.annotations.RelaxedMockK
-import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.ResponseBody.Companion.toResponseBody
 import org.junit.Before
 import org.junit.Test
+import retrofit2.HttpException
+import retrofit2.Response
 
 class NewsCurrentRemoteImplTest:BaseTest(){
 
@@ -35,31 +36,48 @@ class NewsCurrentRemoteImplTest:BaseTest(){
 
     @Test
     fun `should get news when is called with success`() = runBlocking{
-        coEvery {
-            service.getNews().parseResponse().toResponse().toNews()
-        } returns dummyNews
 
+        //Arrange
+        val response = Response.success(dummyNewsResponse)
+
+        coEvery {
+            service.getNews()
+        } returns response
+
+        //Act
         val result = remote.getNews()
 
+        //Assert
         assertThat(result).isEqualTo(dummyNewsResponse.toNews())
         assertThat(result).isInstanceOf(News::class)
 
-        coVerify(exactly = 1) { service.getNews().parseResponse().toResponse().toNews() }
+        coVerify(exactly = 1) {
+            service.getNews()
+        }
+
         confirmVerified(service)
     }
 
-    @Test
+    @Test(expected = HttpException::class)
     fun `should get news when is called with failure`() = runBlocking{
 
-        val exception = mockk<Throwable>(relaxed = true)
+        //Arrange
+        val responseError = Response.error<NewsResponse>(500 ,
+            "some content".toResponseBody("plain/text".toMediaTypeOrNull())
+        )
 
         coEvery {
-            service.getNews().parseResponse().toResponse().toNews()
-        } throws exception
+            service.getNews()
+        } throws HttpException(responseError)
 
+        //Act
         remote.getNews()
 
-        coVerify(exactly = 1) { service.getNews() }
+        //Assert
+        coVerify(exactly = 1) {
+            service.getNews()
+        }
+
         confirmVerified(service)
     }
 }
