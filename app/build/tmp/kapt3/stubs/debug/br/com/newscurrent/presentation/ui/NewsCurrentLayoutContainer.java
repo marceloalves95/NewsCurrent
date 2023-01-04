@@ -8,13 +8,13 @@ public final class NewsCurrentLayoutContainer {
     private final br.com.newscurrent.presentation.ui.NewsCurrentViewModel viewModel = null;
     private br.com.newscurrent.presentation.adapter.NewsCurrentAdapter newsAdapter;
     
-    public NewsCurrentLayoutContainer(@org.jetbrains.annotations.NotNull()
-    br.com.newscurrent.databinding.NewsCurrentMainBinding binding, @org.jetbrains.annotations.NotNull()
+    public NewsCurrentLayoutContainer(@org.jetbrains.annotations.NotNull
+    br.com.newscurrent.databinding.NewsCurrentMainBinding binding, @org.jetbrains.annotations.NotNull
     br.com.newscurrent.presentation.ui.NewsCurrentViewModel viewModel) {
         super();
     }
     
-    public final void setState(@org.jetbrains.annotations.NotNull()
+    public final void setState(@org.jetbrains.annotations.NotNull
     br.com.newscurrent.presentation.model.NewsCurrentState state) {
     }
     

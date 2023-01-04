@@ -7,12 +7,12 @@ public final class NewsCurrentViewModel extends androidx.lifecycle.ViewModel {
     private final br.com.newscurrent.domain.interactor.GetNewsCurrentInteractor getNewsCurrentInteractor = null;
     private final androidx.lifecycle.MutableLiveData<br.com.newscurrent.presentation.model.NewsCurrentState> _state = null;
     
-    public NewsCurrentViewModel(@org.jetbrains.annotations.NotNull()
+    public NewsCurrentViewModel(@org.jetbrains.annotations.NotNull
     br.com.newscurrent.domain.interactor.GetNewsCurrentInteractor getNewsCurrentInteractor) {
         super();
     }
     
-    @org.jetbrains.annotations.NotNull()
+    @org.jetbrains.annotations.NotNull
     public final androidx.lifecycle.LiveData<br.com.newscurrent.presentation.model.NewsCurrentState> getState() {
         return null;
     }

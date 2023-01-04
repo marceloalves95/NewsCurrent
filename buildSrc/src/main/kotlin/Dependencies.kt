@@ -61,13 +61,19 @@ object Dependencies {
         const val arch_core_testing = "androidx.arch.core:core-testing:${Version.arch_core_testing_version}"
         const val assertK = "com.willowtreeapps.assertk:assertk-jvm:${Version.assertK_version}"
         const val mockk = "io.mockk:mockk:${Version.mockk_version}"
-        const val mockk_android = "io.mockk:mockk-android:${Version.mockk_version}"
         const val objenesis="org.objenesis:objenesis:${Version.objenesis_version}"
         const val robolectric = "org.robolectric:robolectric:${Version.robolectric_version}"
+        const val mockwebserver="com.squareup.okhttp3:mockwebserver:${Version.mockwebserver_version}"
         const val koin_test = "io.insert-koin:koin-test:${Version.koin_version}"
         const val junit = "junit:junit:${Version.junit_version}"
-        const val ext_junit = "androidx.test.ext:junit:${Version.ext_junit_version}"
-        const val espresso_core =
-            "androidx.test.espresso:espresso-core:${Version.espresso_core_version}"
+
+        object AutomatedTest{
+            const val core_test = "androidx.test:core-ktx:${Version.core_test_version}"
+            const val barista = "com.adevinta.android:barista:${Version.barista_version}"
+            const val mockk_android = "io.mockk:mockk-android:${Version.mockk_version}"
+            const val ext_junit = "androidx.test.ext:junit:${Version.ext_junit_version}"
+            const val test_runner = "androidx.test:runner:${Version.test_runner_version}"
+            const val espresso_core = "androidx.test.espresso:espresso-core:${Version.espresso_core_version}"
+        }
     }
 }

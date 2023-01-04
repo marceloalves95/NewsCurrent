@@ -43,7 +43,15 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    tasks.withType<Test> {
+        extensions.configure(JacocoTaskExtension::class) {
+            isIncludeNoLocationClasses = true
+            excludes = listOf("jdk.internal.*")
+        }
+    }
 }
+
 dependencies {
 
     implementation(project(":core:network"))
@@ -79,13 +87,19 @@ dependencies {
     implementation(Dependencies.Network.converter_gson)
     implementation(Dependencies.Network.okhttp3_logging_interceptor)
 
-    //Tests
+    //Unit Test
     testImplementation(Dependencies.Testing.assertK)
     testImplementation(Dependencies.Testing.robolectric)
     testImplementation(Dependencies.Testing.mockk)
     testImplementation(Dependencies.Testing.junit)
     testImplementation(Dependencies.Testing.koin_test)
-    androidTestImplementation(Dependencies.Testing.mockk_android)
-    androidTestImplementation(Dependencies.Testing.ext_junit)
-    androidTestImplementation(Dependencies.Testing.espresso_core)
+    testImplementation(Dependencies.Testing.mockwebserver)
+
+    //Instrumental Test
+    androidTestImplementation(Dependencies.Testing.assertK)
+    androidTestImplementation(Dependencies.Testing.AutomatedTest.core_test)
+    androidTestImplementation(Dependencies.Testing.AutomatedTest.mockk_android)
+    androidTestImplementation(Dependencies.Testing.AutomatedTest.ext_junit)
+    androidTestImplementation(Dependencies.Testing.AutomatedTest.barista)
+    androidTestImplementation(Dependencies.Testing.AutomatedTest.espresso_core)
 }

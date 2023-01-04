@@ -1,15 +1,16 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id(Dependencies.Plugin.jacocoReport)
 }
 
 android {
     namespace = "br.com.newscurrent.ui_components"
-    compileSdk = 32
+    compileSdk = 33
 
     defaultConfig {
         minSdk = 21
-        targetSdk = 32
+        targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -22,6 +23,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            enableUnitTestCoverage = true
         }
     }
     compileOptions {
@@ -34,16 +36,27 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    testOptions.unitTests.isIncludeAndroidResources = true
+    testOptions.unitTests.isReturnDefaultValues = true
 }
 
 dependencies {
 
+    implementation(project(":core:testing"))
     implementation(project(":core:extensions"))
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.7.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.4")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
+    implementation(Dependencies.Main.appcompat)
+    implementation(Dependencies.Main.constraint_layout)
+
+    //Unit Test
+    testImplementation(Dependencies.Testing.robolectric)
+
+    //Instrumental Test
+    androidTestImplementation(Dependencies.Testing.assertK)
+    androidTestImplementation(Dependencies.Testing.robolectric)
+    androidTestImplementation(Dependencies.Testing.mockk)
+    androidTestImplementation(Dependencies.Testing.AutomatedTest.ext_junit)
+    androidTestImplementation(Dependencies.Testing.AutomatedTest.test_runner)
+    androidTestImplementation(Dependencies.Testing.AutomatedTest.espresso_core)
 }

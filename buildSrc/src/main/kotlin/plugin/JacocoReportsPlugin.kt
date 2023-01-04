@@ -13,6 +13,10 @@ import org.gradle.testing.jacoco.plugins.JacocoPluginExtension
 import org.gradle.testing.jacoco.tasks.JacocoReport
 import java.io.File
 import java.util.*
+import org.gradle.api.tasks.testing.Test
+import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.withType
+import org.gradle.testing.jacoco.plugins.JacocoTaskExtension
 import kotlin.math.roundToInt
 
 class JacocoReportsPlugin : Plugin<Project> {
@@ -59,7 +63,7 @@ class JacocoReportsPlugin : Plugin<Project> {
             jacocoAfterEvaluate()
 
             dependencies {
-                "implementation"("org.jacoco:org.jacoco.core:0.8.8")
+                "implementation"("org.jacoco:org.jacoco.core:0.8.7")
             }
         }
 
@@ -128,7 +132,7 @@ class JacocoReportsPlugin : Plugin<Project> {
             additionalClassDirs.setFrom(files(coverageSrcDirectories))
             sourceDirectories.setFrom(files(coverageSrcDirectories))
             executionData.setFrom(
-                files("${buildDir}/jacoco/${testTaskName}.exec")
+                files("${buildDir}/jacoco/${testTaskName}.exec", "**/**/*.ec")
             )
 
             reports {

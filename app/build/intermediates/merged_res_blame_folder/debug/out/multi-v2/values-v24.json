@@ -4,7 +4,17 @@
             "outputFile": "br.com.newscurrent.app-mergeDebugResources-36:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/marceloalves/.gradle/caches/transforms-3/5b0ff6fc3047bf86b590ffd78d8871b7/transformed/material-1.7.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/marceloalves/.gradle/caches/transforms-3/ef24e1f42f206d5ea53d3ee6e295878f/transformed/appcompat-1.5.1/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                },
+                {
+                    "source": "/Users/marceloalves/.gradle/caches/transforms-3/4c1eac8db0359eaf0c1a730a3fd598b6/transformed/material-1.7.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -20,16 +30,6 @@
                         "endLines": "4,5,6,7,10,13,16,19",
                         "endColumns": "84,98,86,100,10,10,10,10",
                         "endOffsets": "427,526,613,714,913,1126,1327,1542"
-                    }
-                },
-                {
-                    "source": "/Users/marceloalves/.gradle/caches/transforms-3/36bcb4d8fb17f70dd5395780987c8437/transformed/appcompat-1.5.1/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
                     }
                 }
             ]

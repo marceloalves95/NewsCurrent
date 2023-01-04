@@ -14,7 +14,7 @@ object Version {
     const val lifecycle_version="2.4.0"
     const val kotlinx_coroutines_test="1.6.4"
 
-    const val jacoco_version="0.8.8"
+    const val jacoco_version="0.8.7"
     const val detekt_version="1.22.0"
 
     const val facebook_shimmer_version="0.1.0@aar"
@@ -25,9 +25,13 @@ object Version {
     const val assertK_version="0.25"
     const val koin_version= "3.1.4"
     const val robolectric_version="4.9"
+    const val barista_version="4.2.0"
+    const val core_test_version="1.5.0"
+    const val mockwebserver_version="4.10.0"
     const val mockk_version="1.12.1"
     const val objenesis_version = "3.2"
     const val junit_version="4.13.2"
     const val ext_junit_version="1.1.4"
+    const val test_runner_version="1.5.2"
     const val espresso_core_version="3.5.0"
 }

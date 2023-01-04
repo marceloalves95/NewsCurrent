@@ -9,7 +9,7 @@ import br.com.newscurrent.ui_components.databinding.NewsCurrentErrorViewBinding
 
 class NewsCurrentErrorView @JvmOverloads constructor(
     context: Context,
-    attrs: AttributeSet?,
+    attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 

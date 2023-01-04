@@ -6,6 +6,7 @@ import br.com.newscurrent.domain.models.News
 import br.com.newscurrent.domain.remote.NewsCurrentRemote
 import br.com.newscurrent.network.event.Event
 import br.com.newscurrent.testing.base.BaseTest
+import br.com.newscurrent.testing.base.robot.arrange
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.confirmVerified
