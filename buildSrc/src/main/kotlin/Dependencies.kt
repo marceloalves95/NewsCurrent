@@ -41,6 +41,15 @@ object Dependencies {
         }
     }
 
+    object Compose{
+        const val activity_compose="androidx.activity:activity-compose:${Version.activity_compose_version}"
+        const val compose_ui="androidx.compose.ui:ui:${Version.compose_ui_version}"
+        const val compose_ui_tooling_preview="androidx.compose.ui:ui-tooling-preview:${Version.compose_ui_version}"
+        const val compose_material="androidx.compose.material:material:${Version.compose_material_version}"
+        const val compose_ui_tooling="androidx.compose.ui:ui-tooling:${Version.compose_ui_version}"
+        const val compose_ui_test_manifest="androidx.compose.ui:ui-test-manifest:${Version.compose_ui_version}"
+    }
+
     object ThirdParty {
         const val facebook_shimmer="com.facebook.shimmer:shimmer:${Version.facebook_shimmer_version}"
         const val glide_compiler="com.github.bumptech.glide:compiler:${Version.glide_version}"
@@ -57,7 +66,7 @@ object Dependencies {
     }
 
     object Testing {
-        const val kotlinx_coroutines_test="org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.kotlinx_coroutines_test}"
+        const val kotlinx_coroutines_test="org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.kotlinx_coroutines_test_version}"
         const val arch_core_testing = "androidx.arch.core:core-testing:${Version.arch_core_testing_version}"
         const val assertK = "com.willowtreeapps.assertk:assertk-jvm:${Version.assertK_version}"
         const val mockk = "io.mockk:mockk:${Version.mockk_version}"
@@ -66,6 +75,10 @@ object Dependencies {
         const val mockwebserver="com.squareup.okhttp3:mockwebserver:${Version.mockwebserver_version}"
         const val koin_test = "io.insert-koin:koin-test:${Version.koin_version}"
         const val junit = "junit:junit:${Version.junit_version}"
+
+        object Compose{
+            const val compose_ui_test_junit4="androidx.compose.ui:ui-test-junit4:${Version.compose_ui_version}"
+        }
 
         object AutomatedTest{
             const val core_test = "androidx.test:core-ktx:${Version.core_test_version}"
