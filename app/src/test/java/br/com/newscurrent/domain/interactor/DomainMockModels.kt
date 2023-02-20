@@ -6,7 +6,6 @@ import br.com.newscurrent.data.models.SourceResponse
 import br.com.newscurrent.domain.models.Article
 import br.com.newscurrent.domain.models.News
 import br.com.newscurrent.domain.models.Source
-import retrofit2.Response
 
 val dummySource = Source(
     id = "1",
